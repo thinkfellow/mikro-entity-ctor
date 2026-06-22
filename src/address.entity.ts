@@ -17,7 +17,8 @@ export class Address extends AddressSchema.class {
 
     constructor() {
         super();
-        // ctor is called during schema generation
+        // ctor is called during schema generation which should not happen according to the documentation
+        // @link https://mikro-orm.io/docs/entity-constructors
         console.log('Address ctor');
         // This generates schema for "user" with `"home_address_type" "address_type" null default 'Home'`
         this.type = AddressType.Home;
