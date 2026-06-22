@@ -1,7 +1,8 @@
-import { MikroORM, defineConfig } from '@mikro-orm/postgresql';
+import {defineConfig} from '@mikro-orm/postgresql';
 import {User} from './user.entity.js';
 import {Address} from './address.entity.js';
 import {SqlHighlighter} from '@mikro-orm/sql-highlighter';
+import {SeedManager} from '@mikro-orm/seeder';
 
 export default defineConfig({
     entities: [
@@ -14,5 +15,6 @@ export default defineConfig({
     host: "localhost",
     port: 5437,
     highlighter: new SqlHighlighter(),
+    extensions: [SeedManager],
     debug: true,
 });

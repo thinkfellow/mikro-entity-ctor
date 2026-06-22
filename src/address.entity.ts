@@ -21,10 +21,12 @@ export class Address extends AddressSchema.class {
         // @link https://mikro-orm.io/docs/entity-constructors
         console.log('Address ctor');
         // This generates schema for "user" with `"home_address_type" "address_type" null default 'Home'`
-        this.type = AddressType.Home;
-        // When commented out, generates
-        //                                       `"home_address_type" "address_type" null`
+        // this.type = AddressType.Home;
+        // Since User.homeAddress & User.workAddress are nullable, this results in records being inserted into the
+        // database with street=null but type=Home when User is created with null Addresses
 
+        // When commented out, generates expected schema without default
+        //                                       `"home_address_type" "address_type" null`
     }
 }
 AddressSchema.setClass(Address);

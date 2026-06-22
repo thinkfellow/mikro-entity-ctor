@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "fresh": "mikro-orm schema:fresh --run",
-    "dump": "mikro-orm schema:create --dump"
+    "dump": "mikro-orm schema:create --dump",
+    "seed": "mikro-orm seeder:run"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
   "dependencies": {
     "@mikro-orm/core": "^7.1.4",
     "@mikro-orm/postgresql": "^7.1.4",
+    "@mikro-orm/seeder": "^7.1.4",
     "@mikro-orm/sql-highlighter": "^1.0.1"
   }
 }
