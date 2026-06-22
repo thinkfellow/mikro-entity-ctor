@@ -1,0 +1,14 @@
+name: mikro7-entity-ctor
+services:
+  # https://hub.docker.com/_/postgres/
+  postgres:
+    # lock to latest version available on DigitalOcean; currently 17
+    image: postgres:17
+    restart: always
+    environment:
+      POSTGRES_USER: development
+      POSTGRES_PASSWORD: admin123
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "5437:5432"
