@@ -17,8 +17,10 @@ export class Address extends AddressSchema.class {
 
     constructor() {
         super();
+        // ctor is called during schema generation
+        console.log('Address ctor');
         // This generates schema for "user" with `"home_address_type" "address_type" null default 'Home'`
-        // this.type = AddressType.Home;
+        this.type = AddressType.Home;
         // When commented out, generates
         //                                       `"home_address_type" "address_type" null`
 
